@@ -134,10 +134,12 @@ i:hover{
     justify-content: space-between;
     height: fit-content;
     letter-spacing: 3px;
-
+    width: 110px;
     font-family: 'Baskervville', serif;
 }
-
+.dateContainer > div {
+    text-align: center;
+}
 /* select {
 	-webkit-appearance : none;
 	background-image   : url(../img/down-curved-arrow.png);
