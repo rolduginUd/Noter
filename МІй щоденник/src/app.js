@@ -7,6 +7,7 @@ let errorNotification = document.querySelector('.error');///////////////////////
 let containerLength = 11;//////////////////////////////////////////////////////
 let themeInput = document.getElementById('theme');///////////////////////////
 let hr = document.querySelector('.hr');////////////////////////////////////
+let search = document.getElementById('search');
 
 window.onload =  () => { // password check
     loadStorage();
