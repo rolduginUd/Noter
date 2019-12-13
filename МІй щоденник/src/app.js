@@ -20,7 +20,7 @@ window.onload =  () => { // password check
     //    passwordChecking ();
     // }
 }
-
+// Женя лох
 search.addEventListener('click', () => {
     if(search.value === 'Пошук') {
         local_data.forEach((el) => {
@@ -73,7 +73,7 @@ function inputCheck () { // зміна кольору кнопки в залеж
         addIcon.style.color = '#41b5fe';
     }
 };
-
+// Шукай пасхалки
 function passwordChecking () { // перевірка пароля
     let passwordCheck = prompt('Введіть пароль');
     if(passwordCheck == localStorage.password) {
@@ -295,7 +295,7 @@ $('.select').each(function() {
         .attr('data-value', selectOption.eq(i).val())
         .appendTo(selectList);
     }
-
+// сэкс
     const selectItem = selectList.find('.new-select__item');
     selectList.slideUp(0);
     selectHead.on('click', function() {
