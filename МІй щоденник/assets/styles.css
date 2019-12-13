@@ -212,3 +212,7 @@ i:hover{
          -o-transform: rotate(180deg);
             transform: rotate(180deg);
 }
+#search {
+    width: 100px;
+    padding: 0;
+}

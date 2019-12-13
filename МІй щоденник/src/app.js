@@ -21,6 +21,31 @@ window.onload =  () => { // password check
     // }
 }
 
+search.addEventListener('click', () => {
+    if(search.value === 'Пошук') {
+        local_data.forEach((el) => {
+            if(mainInput.value !== '') {
+                if (el.themeInput !== themeInput.value || el.value !== mainInput.value) {
+                    el.search = 'none';
+                }
+            } else{
+                if (el.themeInput !== themeInput.value) {
+                    el.search = 'none';
+                }
+            }
+        });
+
+        search.value = 'Скасувати';
+    } else if(search.value === 'Скасувати'){
+        local_data.forEach((el) => {
+            el.search = 'flex';
+        });
+        search.value = 'Пошук';
+    }
+    localStorage.setItem('data', JSON.stringify(local_data));
+    updateDOM();
+});
+
 function loadStorage() {
     let data = localStorage.getItem('data');
     if (data) {
@@ -77,6 +102,8 @@ function addData(event) {
         obj.time = d.toLocaleTimeString();
         obj.date = day + '.' + month + '.' + year;
 
+        obj.search = 'flex';
+
         local_data.push(obj);
         localStorage.setItem('data', JSON.stringify(local_data));
 
@@ -92,6 +119,7 @@ function newNoteCreator() {
         local_data.forEach(el => {
             let itemContainer = document.createElement('div'); // створення контейнера для нового запису
             itemContainer.setAttribute('draggable', 'true');
+            itemContainer.style.display = el.search;
 
             let newItem = document.createElement('input');
             newItem.setAttribute('type', 'text');
